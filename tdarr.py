@@ -156,7 +156,7 @@ if skipNZBChecks or 'NZBOP_SCRIPTDIR' in os.environ and not os.environ['NZBOP_VE
         response = requests.post(tdarrURL, json=payload, headers=headers)
         # Increment the amount of waits.
         fileToProcess['waits'] += 1
-        print ("[INFO] Post-Process: Attempt: ", fileToProcess['waits']," for tdarr to pick up : ", file)
+        print ("[INFO] Post-Process: Tdarr API Attempt: ", fileToProcess['waits']," for file : ", file)
         if response.ok:
             respObjects = json.loads(response.text)
             numObjects = len(respObjects)
